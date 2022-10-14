@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+}
+
+header {
+    min-height: 100vh;
+}
+
+section#upper-header {
+    width: 100%;
+    min-height: 10vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+div.brand-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.divider {
+    min-width: 1px;
+    min-height: 25px;
+    margin: 0 .8em;
+    background-color: #fff;
+}
+
+div.brand-box>p {
+    font-weight: 300;
+    vertical-align:bottom;
+}
+
+h1#brand-name {
+    margin: 0 0 0 1em;
+    font-size: 1.5em;
+}
+
+h1#brand-name>span {
+    font-weight: 700;
+}
+
+div.contact-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+ul.contact-list {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+}
+
+ul.contact-list>li.contact-el {
+    margin: 0 1.2em;
+}
+
+li.contact-el>a {
+    font-size: 1.2em;
+    font-weight: 600;
+    position: relative;
+}
+
+nav#navbar {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.navbar-list {
+    min-width: 30em;
+    min-height: 15em;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+li.navbar-el {
+    margin: .8em 0;
+}
+
+li.navbar-el>a {
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    position: relative;
+}
+
+li.navbar-el>a:after,
+li.contact-el>a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+    -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -ms-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+li.navbar-el>a:hover:after,
+li.contact-el>a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+section#section-about {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    background-color: #fff;
+}
+
+div.section-header {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div.title-box, div.text-box {
+    width: 50%;
+    margin: 1em 0 0 0;
+}
+
