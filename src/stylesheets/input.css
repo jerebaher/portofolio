@@ -13,12 +13,11 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    background-color: #000;
-}
+/** HEADER  **/
 
 header {
     min-height: 100vh;
+    background-color: #000;
 }
 
 section#upper-header {
@@ -34,7 +33,7 @@ div.brand-box {
     align-items: center;
 }
 
-div.divider {
+div.vertical-divider {
     min-width: 1px;
     min-height: 25px;
     margin: 0 .8em;
@@ -43,7 +42,7 @@ div.divider {
 
 div.brand-box>p {
     font-weight: 300;
-    vertical-align:bottom;
+    vertical-align: bottom;
 }
 
 h1#brand-name {
@@ -76,6 +75,8 @@ li.contact-el>a {
     font-weight: 600;
     position: relative;
 }
+
+/** NAVEGATION **/
 
 nav#navbar {
     width: 100%;
@@ -130,22 +131,123 @@ li.contact-el>a:hover:after {
     left: 0;
 }
 
+/** ABOUT **/
+
 section#section-about {
     min-height: 100vh;
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    background-color: #fff;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #eee;
+    border-bottom: 1px solid rgb(155, 155, 155);
 }
 
 div.section-header {
+    margin: 5em 0;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
 }
 
-div.title-box, div.text-box {
+div.title-box,
+div.text-box {
     width: 50%;
     margin: 1em 0 0 0;
 }
 
+div.text-box>p.text {
+    line-height: 1.5em;
+    inline-size: 45em;
+}
+
+/** TIMELINE **/
+
+.timeline {
+    height: 100%;
+    margin: 0 2em;
+    position: relative;
+}
+
+.timeline:before {
+    background: #c5c5c5;
+    content: "";
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 4px;
+}
+
+.timeline .timeline-item {
+    clear: both;
+    list-style-type: none;
+    padding: 0 30px;
+    position: relative;
+}
+
+.timeline .timeline-item .timeline-content {
+    background: #fff;
+    border-radius: 15px;
+    padding: 1em;
+    max-width: 45%;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.timeline .timeline-item .timeline-content h3,
+.timeline .timeline-item .timeline-content p,
+.timeline .timeline-item .timeline-content button {
+    color: black;
+    margin: 20px;
+}
+
+.timeline .timeline-item:nth-child(even) .timeline-content {
+    float: right;
+}
+
+.timeline button {
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    color: #656565;
+    font-weight: 500;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+.timeline button:hover {
+    background: #ffffff;
+    border: 2px solid #656565;
+}
+
+@media screen and (max-width: 968px) {
+    .timeline {
+        margin: 0 2em;
+    }
+
+    .timeline:before {
+        left: 0;
+    }
+
+    .timeline .timeline-item:before {
+        left: 0;
+    }
+
+    .timeline .timeline-item .timeline-content {
+        margin: 2em 0;
+        width: 100%;
+    }
+
+    .timeline .timeline-item:nth-child(even) .timeline-content {
+        float: initial;
+    }
+}
+
+/** JOBS  **/
+
+section#section-jobs {
+    background-color: #eee;
+    min-height: 100vh;
+}
